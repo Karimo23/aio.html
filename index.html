@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Password</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 90vw;
+            height: 100%;
+            margin: auto;
+            font-family: sans-serif;
+        }
+
+        .header {
+            font-size: 25px;
+        }
+
+        .description {
+            font-size: 15px;
+            width: 85vw;
+            text-align: center;
+        }
+
+        .user-input {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 90vw;
+            height: 100%;
+            margin: auto;
+        }
+
+        .user-input * {
+            margin: 3%;
+        }
+
+        input {
+            font-family: 'DM Sans';
+            font-size: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            border-width: 1px;
+            border-style: solid;
+            color: rgba(190, 190, 190);
+            border-color: rgba(220, 220, 220, 1);
+            background-color: rgba(235, 235, 235, 1);
+            color: black;
+        }
+
+        button {
+            font-weight: bold;
+            font-size: 15px;
+            background-color: rgba(0, 149, 246, 1);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            border-width: 0px;
+            opacity: 0.5;
+        }
+
+        .nav-header{
+            height: 10px;
+            width: 100%;
+            background-color: white;
+        }
+
+        /* .backbutton {
+            width : 20px;
+            height: 20px;
+            background-color: black;
+            clip-path: polygon(100% 10%, 20% 50%, 100% 90%, 100% 100%, 0 50%, 100% 0);        
+            margin: 5px 10px 10px 10px;
+        } */
+
+        .gradient {
+            display: flex;
+            flex-direction: row;
+            width: 3fr;
+        }
+
+        .grad1 {
+            width: 32vw;
+            height: 2px;
+            background: linear-gradient(to right, orange, red);
+            margin-right: 2vw;
+        }
+
+        .grad2 {
+            width: 32vw;
+            height: 2px;
+            background: linear-gradient(to right, red, purple);
+            margin-right: 2vw;
+        }
+
+        .grad3 {   
+            width: 32vw;
+            height: 2px;
+            background: linear-gradient(to right, purple, purple);
+        }
+
+        input:focus { 
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-header">
+        <div class="backbutton"></div>
+    </div>
+    <div class="gradient">
+        <div class="grad1"></div>
+        <div class="grad2"></div>
+        <div class="grad3"></div>
+    </div>
+    <div class="content">
+        <h1 class="header">
+            Change your password to secure your account
+        </h1>
+        <p class="description">
+            Since you said this wasn't you, update your password to keep your account safe. You'll be logged out of all sessions except this one, so anyone trying to get into your account will no longer have access.</p>
+    </div>
+    <div class="user-input">
+        <input type="password" id="oldpassword" placeholder="Old password" required="true">
+        <input type="password" id="newpassword" placeholder="New password" required="true">
+        <input type="password" id="newpasswordagain" placeholder="New password, again" required="true">
+        <button id="submit">Submit</button>
+    </div>
+    <script>
+        const btn = document.getElementById("submit");
+        const oldPassword = document.getElementById("oldpassword");
+        const newPassword = document.getElementById("newpassword");
+        var confNewPassword = document.getElementById("newpasswordagain");
+        // var form = oldPassword.val().length && newPassword.val().length && confNewPassword.val().length;
+        // if(form)
+        // {
+        //     btn.css("background-color":"rgba(76, 104, 215, 1)");
+        // }
+        document.onkeypress = function (e) {
+            e = e || window.event;
+            if(oldPassword.value.length >= 6 && newPassword.value.length >= 6 && confNewPassword.value.length >= 5){
+                btn.style.opacity = 1;
+            }
+            else {
+                btn.style.opacity = 0.5;
+            }
+        };
+    </script>
+</body>
+</html>
